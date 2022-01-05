@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./ha.js"></script>
+</head>
+
+<body>
+  <textarea id="textarea" placeholder="只支持英文、数字、英文标点符号和空格" name="" id="" cols="30" rows="10"></textarea>
+  <div></div>
+  <br>
+  <div><button id="encodeBtn">把内容转化为摩斯哈哈</button></div>
+  <br>
+  <div id="result"></div>
+  <br>
+
+  <textarea id="haTextarea" placeholder="只支持输入哈、空格和～" name="" id="" cols="30" rows="10"></textarea>
+  <div></div>
+  <br>
+  <div><button id="decodeBtn">把摩斯哈哈转化为内容</button></div>
+  <br>
+  <div id="haResult"></div>
+  <br>
+</body>
+
+<script>
+  encodeBtn.addEventListener('click', () => {
+    const input = textarea.value;
+    const output = encodeHa(input);
+    result.innerText = output;
+  })
+
+  decodeBtn.addEventListener('click', () => {
+    const input = haTextarea.value;
+    const output = decodeHa(input);
+    haResult.innerText = output;
+  })
+</script>
+
+</html>
